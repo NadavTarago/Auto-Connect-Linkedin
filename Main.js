@@ -1,9 +1,11 @@
-/**
+/**	
 	Auto-Add Conections into your linkedin account.
 	instructions: 
 	1. Open chrome, get in: https://www.linkedin.com/mynetwork/  	. Connect to your linkedin first. 
 	2. Make sure the scroll-down bar is appear (means, DO NOT open the chrome window all over your screen! scroll up-down bar should be appear and active! (do not touch scroll it down).
 	3. Open console (f12), and copy paste this script there and press enter. 
+	
+	@Author Nadav Taragan (linkedin Nadav Tarago) Nadav.Tarago@gmail.com
 	**/
 
 	// this function allows us to stop our code for |ms| milliseconds.
