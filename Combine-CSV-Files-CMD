@@ -1,0 +1,8 @@
+// Explanation how to combaine csv files into 1 csv file by using cmd (windows). May apply as well for linux or mac.
+
+
+1. Put all the desired csv files in the same folders.
+2. Open CMD.
+3. Go into the csv files folders by typing 'cd C:\Users\User\MyCSVFolder' press enter.
+4. Type "copy *.csv combine.csv" 
+5. "combine.csv" file will appear in the folder, contain the data of all the other csv files.
