@@ -1,15 +1,31 @@
 /**
 	Auto-Add Conections into your linkedin account.
 	instructions:
-	1. Open chrome, get in: https://www.linkedin.com/mynetwork/  	. Connect to your linkedin first.
-	2. Make sure the scroll-down bar is appear (means, DO NOT open the chrome window all over your screen! scroll up-down bar should be appear and active! (do not touch scroll it down).
+	1. Open chrome, get in: https://www.linkedin.com/mynetwork/ Connect to your linkedin first.
+	2. Make sure the scroll-down bar is appear (means, DO NOT open the chrome window all over your screen! scroll up-down bar
+	   should appeared and active! (DO NOT touch scroll it down).
 	3. Open console (f12), and copy paste this script there and press enter.
 	**/
 
-	//  Allows us to stop our code for |ms| milliseconds.
+
+/** FUNCTIONS: **/
+//  Allows us to stop our code for |ms| milliseconds.
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+function getGMTTime() {
+    var dt = new Date(); 
+    var utcDate = dt.toUTCString();
+    return utcDate; 
+}
+// return the user name that connected.
+function getUserName(){
+	UserName = $("button[name='nav.settings']").prevObject.context.images["0"].alt ;
+	return UserName+"_";
+}
+
+
  // Convert String into txt/csv and download it.
 function downloadString(text, fileType, fileName) {
   var blob = new Blob([text], { type: fileType });
@@ -25,8 +41,8 @@ function downloadString(text, fileType, fileName) {
   setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
 }
 
-
-function enoughConnections(num) { // For future update- I want the program to give alram to users with less than 50 connections that is may not be effective.
+// For future updates- I want the program to give alram to users with less than 50 connections that is may not be effective.
+function enoughConnections(num) { 
 	if (num > 50)
 		return true;
 	else
@@ -141,11 +157,14 @@ async function addPeople() {
 	 }
 
 	}
+	
+	var dt = new Date(); 
+	var utcDate = dt.toUTCString();
+
 	prepare2dArrayToCSV= arrayToCSV(rowsso);
-	downloadString(prepare2dArrayToCSV,"csv","logFile.csv");
+	downloadString(prepare2dArrayToCSV,"csv","logFile_" +getUserName()+ getGMTTime() +".csv");
 	alert(logString); // give an alert about job that have done. 
 		//window.open('mailto:Nadav.Tarago@Gmail.com?subject=log file&body=' +logString); // SEND EMAIL WITH THE ACTIVITIES.
-
-  
+ 
 }
 addPeople();
