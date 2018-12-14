@@ -150,11 +150,12 @@ async function addPeople() {
 
 
 	  	 window.scrollTo(0,document.body.scrollTop); // scroll to top, will scroll to bottum after.
-	  for(i = 0; i <5; i++) { // scroll down the page 5 times (load more linkedin account objects).
-	 window.scrollTo(0,document.body.scrollHeight);
-	 var sleepTimeScroll  = getRandomInt(22, 50);
-	 await sleep(sleepTimeScroll); // let's load some new bitches! .
-	 }
+	  for(i = 0; i <5; i++)
+	  { // scroll down the page 5 times (load more linkedin account objects).
+		 window.scrollTo(0,document.body.scrollHeight);
+		 var sleepTimeScroll  = getRandomInt(22, 50);
+		 await sleep(sleepTimeScroll); // let's load some new bitches! .
+	  }
 
 	}
 	
@@ -167,4 +168,7 @@ async function addPeople() {
 		//window.open('mailto:Nadav.Tarago@Gmail.com?subject=log file&body=' +logString); // SEND EMAIL WITH THE ACTIVITIES.
  
 }
-addPeople();
+
+
+
+addPeople(); // Run the main function
